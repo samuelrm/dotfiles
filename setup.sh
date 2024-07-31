@@ -22,9 +22,5 @@ curr_dir=$(cd "$(dirname "${0}")" && pwd)
 rm -rf "$HOME/.config/nvim"
 ln -sf "${curr_dir}/nvim" "$HOME/.config/nvim"
 
-rm -rf "$HOME/.zshrc" "$HOME/.zsh_aliases"
+rm -rf "$HOME/.zsh_aliases"
 stow zsh
-
-# TODO: Differentiate between personal and work 
-rm -rf "$HOME/.gitconfig"
-stow git

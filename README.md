@@ -1,1 +1,1 @@
-# dotfiles
+My personal dotfiles with no guarantees

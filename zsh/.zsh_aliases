@@ -1,2 +1,41 @@
-alias vim="nvim"
+alias vim=nvim
 alias va="vim ~/.zsh_aliases"
+alias ra="source ~/.zsh_aliases"
+
+# Git aliases
+alias gs="git status"
+alias gpff="git pull --ff-only"
+alias gco="git checkout"
+alias gl="git log"
+alias gus="git submodule update --init --recursive"
+
+# Kubernetes aliases
+alias k="kubectl"
+alias kcc="kubectl config current-context"
+alias kuc="kubectl config use-context"
+alias vk="vim ~/.kube/config"
+alias e="etcdctl"
+
+# Docker aliases
+alias dpv="docker system prune --volumes"
+
+# Random aliases
+alias d="docker"
+
+x509() {
+  openssl s_client -connect "$1" -showcerts </dev/null 2>/dev/null | awk '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/' | openssl x509 -noout -text 2>/dev/null
+}
+
+gdiff() {
+  a="$1"
+  b="$2"
+  if [ -z "$b" ]; then
+    b="HEAD"
+  fi
+  git diff "$a" "$b" ':(exclude)**/go.mod' ':(exclude)**/go.sum' ':(exclude)go.mod' ':(exclude)go.sum'
+}
+
+gpb() {
+  current_branch=$(git symbolic-ref --short HEAD)
+  git push origin "$current_branch"
+}

@@ -8,6 +8,20 @@ alias gpff="git pull --ff-only"
 alias gco="git checkout"
 alias gl="git log"
 alias gus="git submodule update --init --recursive"
+alias gdh="git diff HEAD --"
+alias gwl="git worktree list"
+alias gwa="git worktree add"
+
+# Graphite aliases
+alias gtm="gt modify"
+alias gts="gt submit"
+
+# Gradle
+alias gw="./gradlew"
+alias gls="./gradlew genLock saveLock"
+
+# AI
+alias c="claude"
 
 # Kubernetes aliases
 alias k="kubectl"
@@ -16,11 +30,17 @@ alias kuc="kubectl config use-context"
 alias vk="vim ~/.kube/config"
 alias e="etcdctl"
 
+# Terraform aliases
+alias tf="terraform"
+
 # Docker aliases
+alias d="docker"
 alias dpv="docker system prune --volumes"
+alias dkc="d ps | awk '{ print $1 }' | tail +2 | xargs docker kill"
+alias dri="d images | awk {'print $3'} | tail +2 | xargs docker image rm -f"
 
 # Random aliases
-alias d="docker"
+alias p="python3"
 
 x509() {
   openssl s_client -connect "$1" -showcerts </dev/null 2>/dev/null | awk '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/' | openssl x509 -noout -text 2>/dev/null

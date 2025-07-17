@@ -38,6 +38,7 @@ alias d="docker"
 alias dpv="docker system prune --volumes"
 alias dkc="d ps | awk '{ print $1 }' | tail +2 | xargs docker kill"
 alias dri="d images | awk {'print $3'} | tail +2 | xargs docker image rm -f"
+alias dc="docker-compose"
 
 # Random aliases
 alias p="python3"

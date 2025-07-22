@@ -1,5 +1,6 @@
 alias vim=nvim
 alias va="vim ~/.zsh_aliases"
+alias vnv="vim ~/.config/nvim"
 alias ra="source ~/.zsh_aliases"
 
 # Git aliases
